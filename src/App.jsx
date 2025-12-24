@@ -544,12 +544,12 @@ const Founder = () => {
     },
     {
       id: 2,
-      name: "Mr. Name 2",
+      name: "Mrs.M.Meenambigai",
       title: "Founder of MM Tiger's Skating Academy",
       details: [
-        "International Medalist",
-        "Senior Coach",
-        "Specialist in Artistic Skating"
+        "BA,M.P.ED,PG Diploma in Yoga",
+        "Technical Committee in Speed skating federation of India",
+        "Treasurer Tiruvallur district Speed skating association",
       ],
       img: founder2
     }
