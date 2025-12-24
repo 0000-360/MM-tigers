@@ -483,10 +483,17 @@ body {
 }
 
 .section-subtitle-small {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
   color: white;
+}
+.section-subtitle-main
+{
+font-size: 1.2rem;
+font-weight: 500;
+margin-bottom: 1.5rem;
+color: white;
 }
 
 .about-main-heading {

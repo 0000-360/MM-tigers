@@ -331,10 +331,15 @@ const Achievements = () => {
     <section className="section section-dark" id="achievements">
       <div className="container">
         <h2 className="section-title text-white">Achievements That <span>Inspire</span></h2>
-        <p className="section-subtitle">
-          Our skaters have brought glory home. Here are some of our proud moments.
-        </p>
-
+        <div className="section-subtitle-main">
+       <center> <p className="section-subtitle">
+         Our athletes have earned recognition at district and state levels.</p></center>
+       <center> <p className="section-subtitle">
+Every award reflects consistent training and discipline.</p></center>
+       <center> <p className="section-subtitle">
+We celebrate progress, performance, and pride
+        </p></center>
+        </div>
         <div className="carousel-container">
           <button className="carousel-btn prev" onClick={prevSlide}>&#10094;</button>
           <div className="carousel-track">
