@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo1 from './image/logo.jpeg';
+import logo from './image/logo.png';
 import open from './image/opening.jpg';
 import trophy from './image/trophy2.png';
 import gal1 from './image/gal1.jpg';
@@ -7,11 +7,20 @@ import gal2 from './image/gal2.jpg';
 import gal3 from './image/gal3.jpg';
 import gal4 from './image/gal4.jpg';
 import gal5 from './image/gal5.jpg';
+import gal6 from './image/gal6.jpg'
+import gal7 from './image/gal7.jpg'
+import gal8 from './image/gal8.jpg'
+import gal9 from './image/gal9.jpg'
+import gal10 from './image/gal10.jpg'
+import gal11 from './image/gal11.jpg'
+import gal12 from './image/gal12.jpg'
 import gal from './image/gallary.jpg';
 import ach1 from './image/ach1.jpeg';
 import ach2 from './image/ach2.jpeg';
 import ach3 from './image/ach3.jpeg';
-import ach4 from './image/ach3.jpeg';
+import ach4 from './image/ach4.jpg';
+import ach5 from './image/ach5.jpeg';
+import ach6 from './image/ach6.jpeg';
 import founder from './image/founder.jpeg';
 import logo2 from './image/logo2.png';
 import statsBg from './image/bg1.png';
@@ -26,7 +35,7 @@ import co3 from './image/co3.jpeg';
 import co4 from './image/co4.jpeg';
 import founder2 from './image/founder2.jpeg'
 import founder3 from './image/founder3.jpeg'
-import india from './image/india.png'
+import india from './image/india flag.png'
 
 
 
@@ -49,7 +58,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container">
         <div className="logo-container" onClick={() => scrollToSection('home')}>
-          <div className="logo-circle"><img src={logo1} alt="" /></div>
+          <div className="logo-circle"><img src={logo} alt="" /></div>
           <span className="logo-text">MM TIGERS</span>
         </div>
 
@@ -154,20 +163,25 @@ const About = () => (
           </div>
         </div>
 
+
         <div className="about-visuals">
-          <div className="about-image-frame">
-            <img
-              src={trophy}
-              alt="Trophies"
-              className="about-main-img"
-            />
-            <div className="coaching-info-box">
-              <p>Coach for Roller Hockey / Roll Ball / Archery / Silambattam</p>
+          <div className="about-image-container">
+            <div className="border-accent top-right"></div>
+            <div className="border-accent bottom-left"></div>
+            <div className="about-image-frame">
+              <img
+                src={trophy}
+                alt="Trophies"
+                className="about-main-img"
+              />
+              <div className="coaching-info-box">
+                <p>Coach for Roller Hockey / Roll Ball / Archery / Silambattam</p>
+              </div>
             </div>
-          </div>
-          <div className="champion-card">
-            <h4>Become a Champion with Playing a Skating Academy</h4>
-            <p>"Every great champion starts with practice. Skating is where the journey begins".</p>
+            <div className="champion-card">
+              <h4>Become a Champion with Playing a Skating Academy</h4>
+              <p>"Every great champion starts with practice. Skating is where the journey begins".</p>
+            </div>
           </div>
         </div>
       </div>
@@ -287,11 +301,13 @@ const Mentors = () => (
 const Achievements = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   const achievements = [
-    { id: 1, img: ach1, name: "Santhiya", achievement: "ZONAL Winner" },
-    { id: 2, img: ach2, name: "Tharun", achievement: "STATE Finalist" },
-    { id: 3, img: ach3, name: "Arjun", achievement: "DISTRICT Champ" },
-    { id: 4, img: ach4, name: "Meera", achievement: "ZONAL Winner" },
-    { id: 5, img: ach1, name: "Rohan", achievement: "STATE Medalist" }
+    { id: 1, img: ach1, },
+    { id: 2, img: ach2 },
+    { id: 3, img: ach3 },
+    { id: 4, img: ach4 },
+    { id: 5, img: ach5 },
+    { id: 5, img: ach5 },
+
   ];
 
   // Manual slideshow only - no useEffect
@@ -328,9 +344,7 @@ const Achievements = () => {
                 <div key={item.id} className={className}>
                   <img src={item.img} alt="Achievement" />
                   <div className="achievement-info">
-                    <p className="ach-name">Name : {item.name}</p>
-                    <p className="ach-label">Achievement</p>
-                    <p className="ach-detail">{item.achievement}</p>
+
                   </div>
                 </div>
               );
@@ -401,14 +415,14 @@ const SkatingFeatures = () => {
               >
                 <div className="skating-content-row">
                   <div className="skating-title-side">
-                  
+
                     {feature.img !== india && (
                       <div className="skating-feature-icon">
                         <img src={feature.img} alt={feature.title} />
                       </div>
-                     
+
                     )}
-                     <h3>{feature.title}</h3>
+                    <h3>{feature.title}</h3>
                   </div>
                   <div className="skating-info-side">
                     <p>{feature.text}</p>
@@ -444,17 +458,17 @@ const Gallery = () => {
 
   const row2 = [
     { src: gal, type: "small" },
-    { src: ach1, type: "wide" },
-    { src: ach2, type: "small" },
-    { src: ach3, type: "wide" },
-    { src: gal1, type: "small" },
+    { src: gal6, type: "wide" },
+    { src: gal7, type: "small" },
+    { src: gal8, type: "wide" },
+    { src: gal9, type: "small" },
   ];
 
   const row3 = [
-    { src: gal3, type: "wide" },
-    { src: gal4, type: "small" },
-    { src: gal2, type: "wide" },
-    { src: ach4, type: "small" }, // Assuming ach4 exists or reuse ach3
+    { src: gal10, type: "wide" },
+    { src: gal11, type: "small" },
+    { src: gal12, type: "wide" },
+    { src: gal, type: "small" }, // Assuming ach4 exists or reuse ach3
     { src: gal5, type: "wide" },
   ];
 
@@ -518,79 +532,74 @@ const Founder = () => {
   const founders = [
     {
       id: 1,
-      name: "Mr. Manikandan",
-      title: "Founder & Head Coach",
+      name: "Mr.R.Manikandan",
+      title: "Founder of MM Tiger's Skating Academy",
       details: [
-        "• Coach for Roller hockey / Roll ball",
-        "• Coach for Silambattam",
-        "• Coach for Archery"
+        "BSC, M.P.ED, PG Diploma in Yoga",
+        "Technical Director",
+        "Tamilnadu Speed skating association",
+        "Resource person Tamilnadu coaches clinic class."
       ],
-      quote: "Driven by dedication and experience, our coaches inspire discipline, teamwork, and excellence—guiding skaters from their first stride to competitive success.",
       img: founder3
     },
     {
       id: 2,
       name: "Mr. Name 2",
-      title: "Co-Founder",
+      title: "Founder of MM Tiger's Skating Academy",
       details: [
-        "• International Medalist",
-        "• Special Training for Speed Skating",
-        "• Senior Coach"
+        "International Medalist",
+        "Senior Coach",
+        "Specialist in Artistic Skating"
       ],
-      quote: "Skating is not just a sport; it is a way of life. At MM Tigers, we believe in nurturing talent with the right guidance and discipline.",
       img: founder2
-    },
-
+    }
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % founders.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, [founders.length]);
 
-  const nextSlide = () => setActiveIndex((prev) => (prev + 1) % founders.length);
-  const prevSlide = () => setActiveIndex((prev) => (prev - 1 + founders.length) % founders.length);
-
   return (
     <section className="section section-dark founder-section" id="founder">
-      <div className="founder-watermark"></div>
-      <div className="container founder-container" key={founders[activeIndex].id}>
-        <button className="carousel-btn prev-light founder-nav-btn" onClick={prevSlide}>&#10094;</button>
-        <div className="founder-content fade-in">
-          <h2 className="section-title text-left text-orange">Founder of <span className="text-orange">MM Tiger's Skating Academy</span></h2>
-          <div className="founder-details" style={{ marginBottom: '1.5rem' }}>
-            <h3 style={{ color: 'white', fontSize: '2.2rem', fontWeight: '800', marginBottom: '0.4rem' }}>{founders[activeIndex].name}</h3>
-            <p style={{ color: 'var(--primary-orange)', fontWeight: '700', fontSize: '1.1rem', marginBottom: '0.8rem' }}>{founders[activeIndex].title}</p>
-            <div style={{ color: '#D1D5DB', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-              {founders[activeIndex].details.map((detail, idx) => (
-                <p key={idx}>{detail}</p>
-              ))}
+      <div className="decoration-dots">
+        {founders.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === activeIndex ? 'active' : ''}`}
+            onClick={() => setActiveIndex(index)}
+          ></span>
+        ))}
+      </div>
+
+      <div className="container founder-container">
+        <div className="founder-content-wrapper" key={founders[activeIndex].id}>
+          <div className="founder-text-side fade-in">
+            <h2 className="founder-main-heading">Founder of MM Tiger's Skating Academy</h2>
+            <div className="founder-info-content">
+              <h3 className="founder-display-name">{founders[activeIndex].name}</h3>
+              <div className="founder-bio-list">
+                {founders[activeIndex].details.map((detail, idx) => (
+                  <p key={idx}>{detail}</p>
+                ))}
+              </div>
+            </div>
+            <div className="founder-watermark-logo">
+              <img src={mentorsBg} alt="Watermark" />
             </div>
           </div>
-          <p className="founder-text">
-            "{founders[activeIndex].quote}"
-          </p>
-        </div>
-        <div className="founder-image-wrapper fade-in">
-          <div className="founder-img-box">
-            <img src={founders[activeIndex].img} alt={founders[activeIndex].name} />
+
+          <div className="founder-image-side fade-in">
+            <div className="founder-image-frame-refined">
+              <img src={founders[activeIndex].img} alt={founders[activeIndex].name} />
+            </div>
           </div>
         </div>
-        <button className="carousel-btn next-light founder-nav-btn" onClick={nextSlide}>&#10095;</button>
-
-        <div className="carousel-dots-orange founder-dots">
-          {founders.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${index === activeIndex ? 'active' : ''}`}
-              onClick={() => setActiveIndex(index)}
-            ></span>
-          ))}
-        </div>
       </div>
+
+      <div className="decoration-shape-bottom"></div>
     </section>
   );
 };
