@@ -14,6 +14,9 @@ import gal9 from './image/gal9.jpg'
 import gal10 from './image/gal10.jpg'
 import gal11 from './image/gal11.jpg'
 import gal12 from './image/gal12.jpg'
+import gal13 from './image/ach13.jpeg'
+import gal14 from './image/ach14.jpeg'
+import gal15 from './image/ach15.jpeg'
 import gal from './image/gallary.jpg';
 import ach1 from './image/ach1.jpeg';
 import ach2 from './image/ach2.jpeg';
@@ -36,6 +39,13 @@ import co4 from './image/co4.jpeg';
 import founder2 from './image/founder2.jpeg'
 import founder3 from './image/founder3.jpeg'
 import india from './image/india flag.png'
+import av1 from './image/av1.jpeg'
+import av2 from './image/av2.jpeg'
+import av3 from './image/av3.jpg'
+import av4 from './image/av4.png'
+import av5 from './image/av5.jpeg'
+
+
 
 
 
@@ -159,7 +169,6 @@ const About = () => (
           </p>
 
           <div className="about-cta">
-            <button className="btn btn-primary">Explore More</button>
           </div>
         </div>
 
@@ -306,7 +315,7 @@ const Achievements = () => {
     { id: 3, img: ach3 },
     { id: 4, img: ach4 },
     { id: 5, img: ach5 },
-    { id: 5, img: ach5 },
+    { id: 6, img: ach6 },
 
   ];
 
@@ -383,9 +392,9 @@ const SkatingFeatures = () => {
     },
     {
       id: 2,
-      title: "roll ball",
+      title: "Roll ball",
       img: feature2,
-      text: "Our academy has produced over 50+ state level champions in the last 2 years. Dedicated training sessions for advanced speed skating and artistic roller skating."
+      text: "Our academy has produced over 10+ state level champions in the last 2 years. Dedicated training sessions for advanced speed skating and artistic roller skating."
     },
     {
       id: 3,
@@ -410,14 +419,7 @@ const SkatingFeatures = () => {
           {features.map((feature, index) => (
             <div key={feature.id} className={`skating-feature-item ${index === activeIndex ? 'active' : ''}`}>
               <div
-                className="skating-features-container"
-                style={{
-                  backgroundImage: `url(${india})`,
-                  backgroundSize: 'contain',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
-              >
+                className="skating-features-container">
                 <div className="skating-content-row">
                   <div className="skating-title-side">
 
@@ -454,8 +456,8 @@ const SkatingFeatures = () => {
 const Gallery = () => {
   // Define 3 sets of images for 3 rows
   const row1 = [
-    { src: gal1, type: "wide" },
-    { src: gal2, type: "small" },
+    { src: gal11, type: "wide" },
+    { src: gal13, type: "small" },
     { src: gal3, type: "wide" },
     { src: gal4, type: "small" },
     { src: gal5, type: "wide" },
@@ -473,8 +475,8 @@ const Gallery = () => {
     { src: gal10, type: "wide" },
     { src: gal11, type: "small" },
     { src: gal12, type: "wide" },
-    { src: gal, type: "small" }, // Assuming ach4 exists or reuse ach3
-    { src: gal5, type: "wide" },
+    { src: gal14, type: "small" }, // Assuming ach4 exists or reuse ach3
+    { src: gal15, type: "wide" },
   ];
 
   // Triplicate for seamless loop
@@ -612,11 +614,11 @@ const Founder = () => {
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   const testimonials = [
-    { id: 1, text: "Professional Coaching done for kids in Skating...Excellent and Skilled Coach Mr.Manikandan sir, with kindness and goal oriented.", author: "Raja mahalingam" },
-    { id: 2, text: "Senvina shito - Ryu KARATE training  the kids and adults both Boys and Girls. In our MM Tigers sports Acadmy.", author: "ramya " },
-    { id: 3, text: "Great coaches and atmosphere. i had nice experience from this academy ", author: "kumar " },
-    { id: 4, text: "My kid loves going here everyday!", author: "divya " },
-    { id: 5, text: "Professional and caring staff good experience .i very nice place ", author: "prabhakaran" }
+    { id: 1, text: "Professional Coaching done for grand son in Skating...Excellent and Skilled Coach Mr.Manikandan sir, with kindness and goal oriented.", author: "Raja mahalingam",image:av1 },
+    { id: 2, text: "Senvina shito - Ryu KARATE training  the kids and adults both Boys and Girls. In our MM Tigers sports Acadmy.", author: "ramya ",image:av4},
+    { id: 3, text: "Great coaches and atmosphere. i had nice experience from this academy ", author: "kumar ",image:av2 },
+    { id: 4, text: "My kid loves going here everyday!", author: "divya ",image:av3 },
+    { id: 5, text: "Professional and caring staff good experience .i very nice place ", author: "prabhakaran",image:av5 }
   ];
 
   // Manual slideshow only
@@ -654,7 +656,9 @@ const Testimonials = () => {
                 return (
                   <div key={item.id} className={className}>
                     <div className="testimonial-avatar">
-                      <div className="avatar-circle"></div>
+                      <div className="avatar-circle">
+                        <img src={item.image} alt={item.author} />
+                      </div>
                     </div>
                     <h4>{item.author}</h4>
                     <div className="stars">★★★★★</div>
