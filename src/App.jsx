@@ -750,7 +750,7 @@ const Footer = () => (
       </div>
 
       <div className="footer-copyright-row">
-        <div>© {new Date().getFullYear()} MM Tigers. All rights reserved.</div>
+        <div>© {new Date().getFullYear()} MM Tigers Skating. All rights reserved.</div>
       </div>
     </div>
   </footer>
