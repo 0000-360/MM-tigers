@@ -44,6 +44,7 @@ import av2 from './image/av2.jpeg'
 import av3 from './image/av3.jpg'
 import av4 from './image/av4.png'
 import av5 from './image/av5.jpeg'
+import des from './image/des.jpeg'
 
 
 
@@ -681,35 +682,76 @@ const Footer = () => (
   <footer className="footer" id="footer">
     <div className="container footer-content-wrapper">
 
-      {/* Left Side: Info */}
-      <div className="footer-info">
-        <h2 className="footer-title">MM TIGERS</h2>
-        <p className="footer-subtitle">Master The Wheels, Achieve Greatness</p>
-
-        <div className="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-          </ul>
+      <div className="footer-top">
+        <div className="footer-col footer-contact">
+          <h3 className="contact-title">Contact Us</h3>
+          <input className="footer-input" type="text" placeholder="Name" />
+          <input className="footer-input" type="email" placeholder="Gmail" />
+          <textarea className="footer-input" placeholder="Message" rows={4}></textarea>
         </div>
 
-        <div className="footer-copyright">
-          © {new Date().getFullYear()} MM Tigers. All rights reserved.
+        <div className="footer-col footer-map">
+          <div className="map-wrap">
+            <iframe
+              title="MM Tigers map"
+              src="https://www.google.com/maps?q=MM+Tigers+Skating+Academy+Chennai&output=embed"
+              width="100%"
+              height="200"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p className="footer-address">No 256, Ambathur puzhal main road, 66, Sivaprakasham Nagar, Surapet, Chennai, Tamil Nadu 600066</p>
+        </div>
+
+        <div className="footer-col footer-links-grid">
+          <div className="links-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+          
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#footer">Contact us</a></li>
+            </ul>
+          </div>
+
+          <div className="links-col">
+            <h4>Services</h4>
+            <ul>
+              <li>Roller Hockey</li>
+              <li>Roller Handball</li>
+              <li>Archery</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      {/* Right Side: Form */}
-      <div className="footer-form">
-        <h3>Get In Touch</h3>
-        <form>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <textarea placeholder="Message" rows="4"></textarea>
-          <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+      <div className="footer-divider" />
+
+      <div className="footer-bottom">
+        <div className="footer-brand">
+          <img src={logo} alt="MM Tigers" className="footer-brand-logo" />
+          <span className="footer-brand-text">MM TIGER'S SKATING ACADEMY</span>
+        </div>
+
+        <div className="footer-bottom-right">
+          <div className="madeby">
+            <span>Website made with</span>
+            <img src={des} alt="Designhub" className="madeby-logo" />
+            <span className="madeby-name">Designhub</span>
+          </div>
+
+          <div className="socials">
+            <a href="#" className="social-btn">in</a>
+            <a href="#" className="social-btn">f</a>
+          </div>
+        </div>
       </div>
 
+      <div className="footer-copyright-row">
+        <div>© {new Date().getFullYear()} MM Tigers. All rights reserved.</div>
+      </div>
     </div>
   </footer>
 );
