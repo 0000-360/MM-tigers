@@ -737,7 +737,7 @@ const Footer = () => (
 
         <div className="footer-bottom-right">
           <div className="madeby">
-            <span>Website made with</span>
+            <span>Website made by</span>
             <img src={des} alt="Designhub" className="madeby-logo" />
             <span className="madeby-name">Designhub</span>
           </div>
