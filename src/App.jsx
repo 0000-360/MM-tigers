@@ -17,6 +17,7 @@ import gal12 from './image/gal12.jpg'
 import gal13 from './image/ach13.jpeg'
 import gal14 from './image/ach14.jpeg'
 import gal15 from './image/ach15.jpeg'
+import gal16 from './image/gal16.jpg'
 import gal from './image/gallary.jpg';
 import ach1 from './image/ach1.jpeg';
 import ach2 from './image/ach2.jpeg';
@@ -32,6 +33,7 @@ import feature1 from './image/Roller_hockey1.png';
 import feature2 from './image/Roll_Ball1.png';
 import feature3 from './image/Archery1.png';
 import feature4 from './image/silam.png';
+import feature5 from './image/skating_new.png';
 import co1 from './image/co1.jpeg';
 import co2 from './image/co2.jpeg';
 import co3 from './image/co3.jpeg';
@@ -45,6 +47,7 @@ import av3 from './image/av3.jpg'
 import av4 from './image/av4.png'
 import av5 from './image/av5.jpeg'
 import des from './image/des.jpeg'
+import coachMani from './image/coach_manikandan.jpg'
 
 
 
@@ -123,6 +126,7 @@ const Hero = () => (
 
 const Disciplines = () => {
   const disciplines = [
+    { title: 'Skating', img: feature5 },
     { title: 'Roller Hockey', img: feature1 },
     { title: 'Roll Ball', img: feature2 },
     { title: 'Archery', img: feature3 },
@@ -266,6 +270,16 @@ const Mentors = () => (
       <div className="mentors-grid">
         <div className="mentor-item">
           <div className="mentor-img-circle">
+            <img src={coachMani} alt="Mr. R.Manikandan" />
+          </div>
+          <div className="mentor-info-pill">
+            <h4>Mr. R.Manikandan</h4>
+            <p>Skating Chief Coach</p>
+            <p style={{ fontSize: '0.7rem', lineHeight: '1.2' }}>Technical Committee speed skating federation of India</p>
+          </div>
+        </div>
+        <div className="mentor-item">
+          <div className="mentor-img-circle">
             <img src={co4} alt="Mr. Manikandan" />
           </div>
           <div className="mentor-info-pill">
@@ -342,13 +356,13 @@ const Achievements = () => {
       <div className="container">
         <h2 className="section-title text-white">Achievements That <span>Inspire</span></h2>
         <div className="section-subtitle-main">
-       <center> <p className="section-subtitle">
-         Our athletes have earned recognition at district and state levels.</p></center>
-       <center> <p className="section-subtitle">
-Every award reflects consistent training and discipline.</p></center>
-       <center> <p className="section-subtitle">
-We celebrate progress, performance, and pride
-        </p></center>
+          <center> <p className="section-subtitle">
+            Our athletes have earned recognition at district and state levels.</p></center>
+          <center> <p className="section-subtitle">
+            Every award reflects consistent training and discipline.</p></center>
+          <center> <p className="section-subtitle">
+            We celebrate progress, performance, and pride
+          </p></center>
         </div>
         <div className="carousel-container">
           <button className="carousel-btn prev" onClick={prevSlide}>&#10094;</button>
@@ -401,7 +415,13 @@ const SkatingFeatures = () => {
       id: 3,
       title: "Archery",
       img: feature3,
-      text: "Join the most elite skating force in the region. Expert coaching, world-class equipment guidance, and a community that pushes you to greatness."
+      text: "We started in the year 2025 with dedicated and experienced coach who produced National medalist  Mr.Karthi"
+    },
+    {
+      id: 4,
+      title: "Silambam",
+      img: feature4,
+      text: "We have state and National medalist in silambam. We have chief coach Mr.parthiban Who is Technical director in Tamilnadu silambam Association"
     }
   ];
 
@@ -462,6 +482,7 @@ const Gallery = () => {
     { src: gal3, type: "wide" },
     { src: gal4, type: "small" },
     { src: gal5, type: "wide" },
+    { src: gal16, type: "wide" },
   ];
 
   const row2 = [
@@ -615,11 +636,11 @@ const Founder = () => {
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   const testimonials = [
-    { id: 1, text: "Professional Coaching done for grand son in Skating...Excellent and Skilled Coach Mr.Manikandan sir, with kindness and goal oriented.", author: "Raja mahalingam",image:av1 },
-    { id: 2, text: "Senvina shito - Ryu KARATE training  the kids and adults both Boys and Girls. In our MM Tigers sports Acadmy.", author: "ramya ",image:av4},
-    { id: 3, text: "Great coaches and atmosphere. i had nice experience from this academy ", author: "kumar ",image:av2 },
-    { id: 4, text: "My kid loves going here everyday!", author: "divya ",image:av3 },
-    { id: 5, text: "Professional and caring staff good experience .i very nice place ", author: "prabhakaran",image:av5 }
+    { id: 1, text: "Professional Coaching done for grand son in Skating...Excellent and Skilled Coach Mr.Manikandan sir, with kindness and goal oriented.", author: "Raja mahalingam", image: av1 },
+    { id: 2, text: "Senvina shito - Ryu KARATE training  the kids and adults both Boys and Girls. In our MM Tigers sports Acadmy.", author: "ramya ", image: av4 },
+    { id: 3, text: "Great coaches and atmosphere. i had nice experience from this academy ", author: "kumar ", image: av2 },
+    { id: 4, text: "My kid loves going here everyday!", author: "divya ", image: av3 },
+    { id: 5, text: "Professional and caring staff good experience .i very nice place ", author: "prabhakaran", image: av5 }
   ];
 
   // Manual slideshow only
@@ -710,7 +731,7 @@ const Footer = () => (
             <h4>Company</h4>
             <ul>
               <li><a href="#home">Home</a></li>
-          
+
               <li><a href="#gallery">Gallery</a></li>
               <li><a href="#footer">Contact us</a></li>
             </ul>
