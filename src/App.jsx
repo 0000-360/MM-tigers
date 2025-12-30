@@ -1,53 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import logo from './image/logo.png';
-import open from './image/opening.jpg';
-import trophy from './image/trophy2.png';
-import gal1 from './image/gal1.jpg';
-import gal2 from './image/gal2.jpg';
-import gal3 from './image/gal3.jpg';
-import gal4 from './image/gal4.jpg';
-import gal5 from './image/gal5.jpg';
-import gal6 from './image/gal6.jpg'
-import gal7 from './image/gal7.jpg'
-import gal8 from './image/gal8.jpg'
-import gal9 from './image/gal9.jpg'
-import gal10 from './image/gal10.jpg'
-import gal11 from './image/gal11.jpg'
-import gal12 from './image/gal12.jpg'
-import gal13 from './image/ach13.jpeg'
-import gal14 from './image/ach14.jpeg'
-import gal15 from './image/ach15.jpeg'
-import gal16 from './image/gal16.jpg'
-import gal from './image/gallary.jpg';
+import { useEffect, useState } from 'react';
 import ach1 from './image/ach1.jpeg';
+import gal13 from './image/ach13.jpeg';
+import gal14 from './image/ach14.jpeg';
+import gal15 from './image/ach15.jpeg';
 import ach2 from './image/ach2.jpeg';
 import ach3 from './image/ach3.jpeg';
 import ach4 from './image/ach4.jpg';
 import ach5 from './image/ach5.jpeg';
 import ach6 from './image/ach6.jpeg';
-import founder from './image/founder.jpeg';
-import logo2 from './image/logo2.png';
-import statsBg from './image/bg1.png';
-import mentorsBg from './image/logo2.png';
-import feature1 from './image/Roller_hockey1.png';
-import feature2 from './image/Roll_Ball1.png';
 import feature3 from './image/Archery1.png';
-import feature4 from './image/silam.png';
-import feature5 from './image/skating_new.png';
+import av1 from './image/av1.jpeg';
+import av2 from './image/av2.jpeg';
+import av3 from './image/av3.jpg';
+import av4 from './image/av4.png';
+import av5 from './image/av5.jpeg';
+import statsBg from './image/bg1.png';
 import co1 from './image/co1.jpeg';
 import co2 from './image/co2.jpeg';
 import co3 from './image/co3.jpeg';
 import co4 from './image/co4.jpeg';
-import founder2 from './image/founder2.jpeg'
-import founder3 from './image/founder3.jpeg'
-import india from './image/india flag.png'
-import av1 from './image/av1.jpeg'
-import av2 from './image/av2.jpeg'
-import av3 from './image/av3.jpg'
-import av4 from './image/av4.png'
-import av5 from './image/av5.jpeg'
-import des from './image/des.jpeg'
-import coachMani from './image/coach_manikandan.jpg'
+import coachMani from './image/coach_manikandan.jpg';
+import des from './image/des.jpeg';
+import founder2 from './image/founder2.jpeg';
+import founder3 from './image/founder3.jpeg';
+import gal10 from './image/gal10.jpg';
+import gal11 from './image/gal11.jpg';
+import gal12 from './image/gal12.jpg';
+import gal16 from './image/gal16.jpg';
+import gal3 from './image/gal3.jpg';
+import gal4 from './image/gal4.jpg';
+import gal5 from './image/gal5.jpg';
+import gal6 from './image/gal6.jpg';
+import gal7 from './image/gal7.jpg';
+import gal8 from './image/gal8.jpg';
+import gal9 from './image/gal9.jpg';
+import gal from './image/gallary.jpg';
+import india from './image/india flag.png';
+import logo from './image/logo.png';
+import mentorsBg from './image/logo2.png';
+import open from './image/opening.jpg';
+import feature2 from './image/Roll_Ball1.png';
+import feature1 from './image/Roller_hockey1.png';
+import feature4 from './image/silam.png';
+import feature5 from './image/skating_new.png';
+import trophy from './image/trophy2.png';
 
 
 
@@ -73,7 +69,7 @@ const Navbar = () => {
       <div className="container">
         <div className="logo-container" onClick={() => scrollToSection('home')}>
           <div className="logo-circle"><img src={logo} alt="" /></div>
-          <span className="logo-text">MM TIGERS</span>
+          <span className="logo-text">MM Tigers Skating Academy</span>
         </div>
 
         <div className="menu-desktop">
@@ -112,7 +108,7 @@ const Hero = () => (
       <div className="hero-content">
         <h1 className="hero-title">Master The Wheels<br />Achieve Greatness</h1>
         <div className="hero-buttons">
-          <button className="btn btn-primary" onClick={() => document.getElementById('footer').scrollIntoView({ behavior: 'smooth' })}>Let's Play</button>
+          {/* <button className="btn btn-primary" onClick={() => document.getElementById('footer').scrollIntoView({ behavior: 'smooth' })}>Let's Play</button> */}
           <button className="btn btn-secondary" onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}>Explore Now</button>
         </div>
 
@@ -699,83 +695,156 @@ const Testimonials = () => {
   );
 };
 
-const Footer = () => (
-  <footer className="footer" id="footer">
-    <div className="container footer-content-wrapper">
+const Footer = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-      <div className="footer-top">
-        <div className="footer-col footer-contact">
-          <h3 className="contact-title">Contact Us</h3>
-          <input className="footer-input" type="text" placeholder="Name" />
-          <input className="footer-input" type="email" placeholder="Gmail" />
-          <textarea className="footer-input" placeholder="Message" rows={4}></textarea>
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSend = () => {
+    const { name, email, message } = formData;
+    // Construct mailto link
+    // Replace 'mmtigers.skating@gmail.com' with the actual academy email if known
+    const recipient = "mmtigerssportacademy@gmail.com";
+    const subject = encodeURIComponent(`Inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+  };
+
+  return (
+    <footer className="footer" id="footer">
+      <div className="container footer-content-wrapper">
+
+        <div className="footer-top">
+          <div className="footer-col footer-contact">
+            <h3 className="contact-title">Contact Us</h3>
+            <input
+              className="footer-input"
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <input
+              className="footer-input"
+              type="email"
+              placeholder="Gmail"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <textarea
+              className="footer-input"
+              placeholder="Message"
+              rows={4}
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+            ></textarea>
+            <button
+              className="btn btn-primary"
+              onClick={handleSend}
+              style={{ marginTop: '1rem', width: '100%' }}
+            >
+              Send Message
+            </button>
+          </div>
+
+          <div className="footer-col footer-map">
+            <div className="map-wrap">
+              <iframe
+                title="MM Tigers map"
+                src="https://www.google.com/maps?q=MM+Tigers+Skating+Academy+Chennai&output=embed"
+                width="100%"
+                height="200"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+            <p className="footer-address">No 256, Ambathur puzhal main road, 66, Sivaprakasham Nagar, Surapet, Chennai, Tamil Nadu 600066  </p>
+            <p> Contact Us : 98947 12224</p>
+          </div>
+
+          <div className="footer-col footer-links-grid">
+            <div className="links-col">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#footer">Contact us</a></li>
+              </ul>
+            </div>
+
+            <div className="links-col">
+              <h4>Services</h4>
+              <ul>
+                <li>Roller Hockey</li>
+                <li>Roller Handball</li>
+                <li>Archery</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div className="footer-col footer-map">
-          <div className="map-wrap">
-            <iframe
-              title="MM Tigers map"
-              src="https://www.google.com/maps?q=MM+Tigers+Skating+Academy+Chennai&output=embed"
-              width="100%"
-              height="200"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+        <div className="footer-divider" />
+
+        <div className="footer-bottom">
+          <div className="footer-brand">
+            <img src={logo} alt="MM Tigers" className="footer-brand-logo" />
+            <span className="footer-brand-text">MM TIGER'S SKATING ACADEMY</span>
           </div>
-          <p className="footer-address">No 256, Ambathur puzhal main road, 66, Sivaprakasham Nagar, Surapet, Chennai, Tamil Nadu 600066</p>
+
+          <div className="footer-bottom-right">
+            <div className="madeby">
+              <span>Website made by</span>
+              <img src={des} alt="Designhub" className="madeby-logo" />
+              <span className="madeby-name">Designhub</span>
+            </div>
+
+            <div className="socials">
+              <a href="#" className="social-btn">in</a>
+              <a href="#" className="social-btn">f</a>
+            </div>
+          </div>
         </div>
 
-        <div className="footer-col footer-links-grid">
-          <div className="links-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="#home">Home</a></li>
-
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#footer">Contact us</a></li>
-            </ul>
-          </div>
-
-          <div className="links-col">
-            <h4>Services</h4>
-            <ul>
-              <li>Roller Hockey</li>
-              <li>Roller Handball</li>
-              <li>Archery</li>
-            </ul>
-          </div>
+        <div className="footer-copyright-row">
+          <div>© {new Date().getFullYear()} MM Tigers Skating. All rights reserved.</div>
         </div>
       </div>
+    </footer>
+  );
+};
 
-      <div className="footer-divider" />
-
-      <div className="footer-bottom">
-        <div className="footer-brand">
-          <img src={logo} alt="MM Tigers" className="footer-brand-logo" />
-          <span className="footer-brand-text">MM TIGER'S SKATING ACADEMY</span>
-        </div>
-
-        <div className="footer-bottom-right">
-          <div className="madeby">
-            <span>Website made by</span>
-            <img src={des} alt="Designhub" className="madeby-logo" />
-            <span className="madeby-name">Designhub</span>
-          </div>
-
-          <div className="socials">
-            <a href="#" className="social-btn">in</a>
-            <a href="#" className="social-btn">f</a>
-          </div>
-        </div>
-      </div>
-
-      <div className="footer-copyright-row">
-        <div>© {new Date().getFullYear()} MM Tigers Skating. All rights reserved.</div>
-      </div>
-    </div>
-  </footer>
-);
+const WhatsAppButton = () => {
+  return (
+    <a
+      href="https://wa.me/919894712224"
+      className="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="35"
+        height="35"
+        fill="white"
+      >
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+      </svg>
+    </a>
+  );
+};
 
 // --- Main App Component ---
 
@@ -794,6 +863,7 @@ function App() {
       <Founder />
       <Testimonials />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
