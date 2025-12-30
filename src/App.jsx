@@ -69,7 +69,7 @@ const Navbar = () => {
       <div className="container">
         <div className="logo-container" onClick={() => scrollToSection('home')}>
           <div className="logo-circle"><img src={logo} alt="" /></div>
-          <span className="logo-text">MM Tigers Skating Academy</span>
+          <span className="logo-text">MM Tigers Sports Academy</span>
         </div>
 
         <div className="menu-desktop">
@@ -801,7 +801,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-brand">
             <img src={logo} alt="MM Tigers" className="footer-brand-logo" />
-            <span className="footer-brand-text">MM TIGER'S SKATING ACADEMY</span>
+            <span className="footer-brand-text">MM TIGER'S SPORTS ACADEMY</span>
           </div>
 
           <div className="footer-bottom-right">
@@ -819,7 +819,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-copyright-row">
-          <div>© {new Date().getFullYear()} MM Tigers Skating. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} MM Tigers Sports Academy . All rights reserved.</div>
         </div>
       </div>
     </footer>
